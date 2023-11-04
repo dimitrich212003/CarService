@@ -33,10 +33,42 @@ public void run(String... args) {
     BrandsDTO brand1 = new BrandsDTO();
     brand1.setName("Brand One");
     brand1 = brandsService.createBrand(brand1);
+//    System.out.println("А ВОТ ЧТО У НАС С АЙДИШНИКОМ БРЕНДА В ИНИЦИАЛАЙЗЕРЕ: " + brand1.getId() + "========================================================================");
 
     BrandsDTO brand2 = new BrandsDTO();
     brand2.setName("Brand Two");
     brand2 = brandsService.createBrand(brand2);
+
+    // Создание моделей автомобилей
+    ModelsDTO model1 = new ModelsDTO();
+    model1.setName("BMW");
+    model1.setCategory(Models.CategoryType.CAR);
+    model1.setImageUrl("https://fikiwiki.com/uploads/posts/2022-02/mashin-53.jpg");
+    model1.setStartYear(2010);
+    model1.setEndYear(2019);
+    model1.setBrand(brand1.getId());
+//    System.out.println("чему же равен айдишник в model1 initializer: " + model1.getBrand() + " hahahahahhahahahaahhahahahahhahahhahahaahahaha:)");
+    model1 = modelsService.createModel(model1);
+
+//    System.out.println("ОШИБКА НЕ В МАППИНГЕ ИЗ СУЩНОСТИ В ДТО ----------------------------------------------------------------");
+
+    ModelsDTO model2 = new ModelsDTO();
+    model2.setName("Mercedes");
+    model2.setCategory(Models.CategoryType.TRUCK);
+    model2.setImageUrl("https://fikiwiki.com/uploads/posts/2022-02/mashin-54.jpg");
+    model2.setStartYear(2015);
+    model2.setEndYear(2022);
+    model2.setBrand(brand2.getId());
+    model2 = modelsService.createModel(model2);
+
+    ModelsDTO model3 = new ModelsDTO();
+    model3.setName("m5");
+    model3.setCategory(Models.CategoryType.BUSS);
+    model3.setImageUrl("https://fikiwiki.com/uploads/posts/2022-02/mash-60.jpg");
+    model3.setStartYear(2015);
+    model3.setEndYear(2022);
+    model3.setBrand(brand2.getId());
+    model3 = modelsService.createModel(model3);
 
     // Создание ролей пользователей
     RolesDTO roleAdmin = new RolesDTO();
@@ -48,6 +80,7 @@ public void run(String... args) {
     // Создание пользователей
     UsersDTO user1 = new UsersDTO();
     user1.setUsername("userone");
+    user1.setPassword("12345678");
     user1.setFirstName("User");
     user1.setLastName("One");
     user1.setActive(true);
@@ -56,26 +89,12 @@ public void run(String... args) {
 
     UsersDTO user2 = new UsersDTO();
     user2.setUsername("usertwo");
+    user2.setPassword("87654321");
     user2.setFirstName("User");
     user2.setLastName("Two");
     user2.setActive(false);
     user2.setRole((roleUser.getRole()).toString());
     user2 = usersService.createUser(user2);
-
-    // Создание моделей автомобилей
-    ModelsDTO model1 = new ModelsDTO();
-    model1.setName("Model One");
-    model1.setCategory(Models.CategoryType.CAR);
-    model1.setImageUrl("https://fikiwiki.com/uploads/posts/2022-02/mashin-53.jpg");
-    model1.setBrand(brand1.getName());
-    model1 = modelsService.createModel(model1);
-
-    ModelsDTO model2 = new ModelsDTO();
-    model2.setName("Model Two");
-    model2.setCategory(Models.CategoryType.TRUCK);
-    model2.setImageUrl("https://fikiwiki.com/uploads/posts/2022-02/mashin-54.jpg");
-    model2.setBrand(brand2.getName());
-    model2 = modelsService.createModel(model2);
 
     // Создание предложений
     OffersDTO offer1 = new OffersDTO();
@@ -85,9 +104,8 @@ public void run(String... args) {
     offer1.setPrice(new BigDecimal( 30000.00));
     offer1.setTransmission(Offers.TransmissionType.AUTOMATIC);
     offer1.setYear(2010);
-    offer1.setUserFirstName(user1.getFirstName());
-    offer1.setUserLastName(user1.getLastName());
-    offer1.setModelName(model1.getName());
+    offer1.setUsersDTO(user1);
+    offer1.setModel(model1.getId());
     offersService.createOffer(offer1);
 
     OffersDTO offer2 = new OffersDTO();
@@ -97,9 +115,8 @@ public void run(String... args) {
     offer2.setPrice(new BigDecimal( 45000.00));
     offer2.setTransmission(Offers.TransmissionType.MANUAL);
     offer2.setYear(2015);
-    offer2.setUserFirstName(user2.getFirstName());
-    offer2.setUserLastName(user2.getLastName());
-    offer2.setModelName(model2.getName());
+    offer2.setUsersDTO(user2);
+    offer2.setModel(model2.getId());
     offersService.createOffer(offer2);
 }
 }

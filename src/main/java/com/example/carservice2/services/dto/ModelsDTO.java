@@ -8,13 +8,13 @@ import org.hibernate.validator.constraints.Length;
 import java.util.UUID;
 
 public class ModelsDTO {
-    private UUID id;
-    private String name;
-    private Models.CategoryType category;
-    private String imageUrl;
-    private int startYear;
-    private int endYear;
-    private String brand;
+        private UUID id;
+        private String name;
+        private Models.CategoryType category;
+        private String imageUrl;
+        private int startYear;
+        private int endYear;
+        private UUID brand;
 
 
     public ModelsDTO() {
@@ -48,10 +48,6 @@ public class ModelsDTO {
         return endYear;
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
     public void setId(UUID id) {
         this.id = id;
     }
@@ -76,7 +72,12 @@ public class ModelsDTO {
         this.endYear = endYear;
     }
 
-    public void setBrand(String brand) {
+
+    public UUID getBrand() {
+        return brand;
+    }
+
+    public void setBrand(UUID brand) {
         this.brand = brand;
     }
 }

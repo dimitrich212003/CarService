@@ -1,5 +1,9 @@
 package com.example.carservice2.services.impl;
 
+import com.example.carservice2.models.Models;
+import com.example.carservice2.models.Users;
+import com.example.carservice2.repositories.ModelsRepository;
+import com.example.carservice2.repositories.UsersRepository;
 import com.example.carservice2.services.dto.OffersDTO;
 import com.example.carservice2.models.Offers;
 import com.example.carservice2.repositories.OffersRepository;
@@ -17,17 +21,32 @@ public class OffersServiceImpl implements OffersService {
 
     private final OffersRepository offersRepository;
 
+    private final ModelsRepository modelsRepository;
+
+    private final UsersRepository usersRepository;
+
     private final ModelMapper modelMapper;
 
     @Autowired
-    public OffersServiceImpl(OffersRepository offersRepository, ModelMapper modelMapper) {
+    public OffersServiceImpl(OffersRepository offersRepository, ModelsRepository modelsRepository, UsersRepository usersRepository, ModelMapper modelMapper) {
         this.offersRepository = offersRepository;
+        this.modelsRepository = modelsRepository;
+        this.usersRepository = usersRepository;
         this.modelMapper = modelMapper;
     }
 
     @Override
     public OffersDTO createOffer(OffersDTO offerDto) {
         Offers offer = modelMapper.map(offerDto, Offers.class);
+//        if(offerDto.getModelsDTO().getId() != null) {
+//            Models model = modelsRepository.findById(offerDto.getModelsDTO().getId()).get();
+//            offer.setModel(model);
+//        }
+        if(offerDto.getUsersDTO().getId() != null) {
+            Users user = usersRepository.findById(offerDto.getUsersDTO().getId()).get();
+            offer.setSeller(user);
+        }
+
         Offers createdOffer = offersRepository.saveAndFlush(offer);
         return modelMapper.map(createdOffer, OffersDTO.class);
     }

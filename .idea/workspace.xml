@@ -5,7 +5,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67d7081f-f814-4dd8-955a-476510bb656d" name="Changes" comment="initial commit">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/mapper/Mapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/mapper/impl/CarModelMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/mapper/impl/OfferMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/dto/BaseEntityDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b2dbfd0f-3c11-4a1b-86ed-b17a2d3b0ecb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b2dbfd0f-3c11-4a1b-86ed-b17a2d3b0ecb.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b2dbfd0f-3c11-4a1b-86ed-b17a2d3b0ecb/storage_v2/_src_/database/car.1H8BAA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b2dbfd0f-3c11-4a1b-86ed-b17a2d3b0ecb/storage_v2/_src_/database/car.1H8BAA/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/DataInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/models/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/models/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/models/Brands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/models/Brands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/models/Models.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/models/Models.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/models/Offers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/models/Offers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/models/Roles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/models/Roles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/models/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/models/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/dto/BrandsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/dto/BrandsDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/dto/ModelsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/dto/ModelsDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/dto/OffersDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/dto/OffersDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/dto/UsersDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/dto/UsersDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/impl/BrandsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/impl/BrandsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/impl/ModelsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/impl/ModelsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/impl/OffersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/impl/OffersServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/DataInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/DataInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/BaseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/BaseEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Brands.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Brands.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Models$CategoryType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Models$CategoryType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Models.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Models.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Offers$EngineType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Offers$EngineType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Offers$TransmissionType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Offers$TransmissionType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Offers.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Offers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Roles$RoleType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Roles$RoleType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Roles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Roles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Users.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/dto/BrandsDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/dto/BrandsDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/dto/ModelsDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/dto/ModelsDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/dto/OffersDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/dto/OffersDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/dto/UsersDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/dto/UsersDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/impl/BrandsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/impl/BrandsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/impl/ModelsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/impl/ModelsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/impl/OffersServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/impl/OffersServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarService2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../branches" beforeDir="false" afterPath="$PROJECT_DIR$/../branches" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,32 +74,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/User/Desktop/3 курс/Веб/CarService2",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "ccba4f38ac5576162ad2aa6cff0284ef",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/3 курс/Веб/CarService2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;ccba4f38ac5576162ad2aa6cff0284ef&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\User\Desktop\3 курс\Веб\CarService2\src\main\java\com\example\carservice2\model" />
@@ -94,6 +136,12 @@
       <workItem from="1697718609464" duration="35361000" />
       <workItem from="1698139643092" duration="61000" />
       <workItem from="1698323299087" duration="38833000" />
+      <workItem from="1698504665015" duration="15262000" />
+      <workItem from="1698660819225" duration="4222000" />
+      <workItem from="1698673829872" duration="17511000" />
+      <workItem from="1698747940949" duration="898000" />
+      <workItem from="1698856875071" duration="1374000" />
+      <workItem from="1698908582591" duration="40766000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1698503801937</created>

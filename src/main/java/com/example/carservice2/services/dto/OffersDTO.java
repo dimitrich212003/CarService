@@ -1,6 +1,8 @@
 package com.example.carservice2.services.dto;
 
+import com.example.carservice2.models.Models;
 import com.example.carservice2.models.Offers;
+import com.example.carservice2.models.Users;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -16,9 +18,8 @@ public class OffersDTO {
     private BigDecimal price;
     private Offers.TransmissionType transmission;
     private int year;
-    private String userFirstName;
-    private String userLastName;
-    private String modelName;
+    private UsersDTO usersDTO;
+    private UUID model;
 
     public OffersDTO() {
 
@@ -64,21 +65,8 @@ public class OffersDTO {
     }
 
     @NotNull
-    @NotEmpty
-    public String getUserFirstName() {
-        return userFirstName;
-    }
-
-    @NotNull
-    @NotEmpty
-    public String getUserLastName() {
-        return userLastName;
-    }
-
-    @NotNull
-    @NotEmpty
-    public String getModelName() {
-        return modelName;
+    public UsersDTO getUsersDTO() {
+        return usersDTO;
     }
 
     public void setId(UUID id) {
@@ -113,15 +101,14 @@ public class OffersDTO {
         this.year = year;
     }
 
-    public void setUserFirstName(String userFirstName) {
-        this.userFirstName = userFirstName;
+    public void setUsersDTO(UsersDTO usersDTO) {
+        this.usersDTO = usersDTO;
     }
 
-    public void setUserLastName(String userLastName) {
-        this.userLastName = userLastName;
+    public UUID getModel() {
+        return model;
     }
-
-    public void setModelName(String modelName) {
-        this.modelName = modelName;
+    public void setModel(UUID model) {
+        this.model = model;
     }
 }

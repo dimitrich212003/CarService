@@ -16,11 +16,9 @@ public class UsersDTO {
     private boolean isActive;
     private String imageUrl;
 
-
     public UsersDTO() {
 
     }
-
 
     public UUID getId() {
         return id;

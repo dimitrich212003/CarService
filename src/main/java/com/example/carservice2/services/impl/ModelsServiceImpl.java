@@ -1,11 +1,13 @@
 package com.example.carservice2.services.impl;
 
 
+import com.example.carservice2.mapper.impl.CarModelMapper;
+import com.example.carservice2.models.Brands;
+import com.example.carservice2.repositories.BrandsRepository;
 import com.example.carservice2.services.dto.ModelsDTO;
 import com.example.carservice2.models.Models;
 import com.example.carservice2.repositories.ModelsRepository;
 import com.example.carservice2.services.ModelsService;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,19 +19,21 @@ import java.util.stream.Collectors;
 public class ModelsServiceImpl implements ModelsService {
 
     private final ModelsRepository modelsRepository;
-    private final ModelMapper modelMapper;
+    private final CarModelMapper carModelMapper;
+    private final BrandsRepository brandsRepository;
 
     @Autowired
-    public ModelsServiceImpl(ModelsRepository modelsRepository, ModelMapper modelMapper) {
+    public ModelsServiceImpl(ModelsRepository modelsRepository, CarModelMapper carModelMapper, BrandsRepository brandsRepository) {
         this.modelsRepository = modelsRepository;
-        this.modelMapper = modelMapper;
+        this.carModelMapper = carModelMapper;
+        this.brandsRepository = brandsRepository;
     }
 
     @Override
     public ModelsDTO createModel(ModelsDTO modelDto) {
-        Models model = modelMapper.map(modelDto, Models.class);
-        Models createdModel = modelsRepository.saveAndFlush(model);
-        return modelMapper.map(createdModel, ModelsDTO.class);
+        Models model = carModelMapper.toModel(modelDto);
+        modelsRepository.saveAndFlush(model);
+        return modelDto;
     }
 
     @Override
@@ -43,7 +47,7 @@ public class ModelsServiceImpl implements ModelsService {
         model.setEndYear(modelDto.getEndYear());
 
         Models updatedModel = modelsRepository.save(model);
-        return modelMapper.map(updatedModel, ModelsDTO.class);
+        return carModelMapper.toDTO(updatedModel);
     }
 
     @Override
@@ -54,14 +58,14 @@ public class ModelsServiceImpl implements ModelsService {
     @Override
     public ModelsDTO getModelById(UUID id) {
         Models model = modelsRepository.findById(id).orElseThrow(() -> new RuntimeException("Model not found"));
-        return modelMapper.map(model, ModelsDTO.class);
+        return carModelMapper.toDTO(model);
     }
 
     @Override
     public List<ModelsDTO> getAllModels() {
         List<Models> models = modelsRepository.findAll();
         return models.stream()
-                .map(model -> modelMapper.map(model, ModelsDTO.class))
+                .map(model -> carModelMapper.toDTO(model))
                 .collect(Collectors.toList());
     }
 }

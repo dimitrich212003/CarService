@@ -27,6 +27,7 @@ public class BrandsServiceImpl implements BrandsService {
     public BrandsDTO createBrand(BrandsDTO brandsDTO) {
         Brands brand = modelMapper.map(brandsDTO, Brands.class);
         Brands createBrand = brandsRepository.saveAndFlush(brand);
+        System.out.println("Бренд " + createBrand.getName() + "  " + createBrand.getId() + "сохранен");
         return modelMapper.map(createBrand, BrandsDTO.class);
     }
 
@@ -35,7 +36,7 @@ public class BrandsServiceImpl implements BrandsService {
         Brands brand = brandsRepository.findById(id).orElseThrow(() -> new RuntimeException("Brand not found"));
 
         brand.setName(brandsDTO.getName());
-        Brands updateBrand = brandsRepository.save(brand);
+        Brands updateBrand = brandsRepository.saveAndFlush(brand);
         return modelMapper.map(updateBrand, BrandsDTO.class);
     }
 

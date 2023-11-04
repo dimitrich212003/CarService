@@ -1,77 +1,40 @@
 package com.example.carservice2.models;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
+import java.util.List;
 
-@Entity
-public class Users extends ExtendsEntity{
-    private Roles role;
+@EqualsAndHashCode(callSuper = true)
+@Data
+@Entity(name = "users")
+public class Users extends ExtendsEntity {
+
+    @Column(unique = true, nullable = false)
     private String username;
+
+    @Column(nullable = false)
     private String password;
+
+    @Column(nullable = false)
     private String firstName;
+
+    @Column(nullable = false)
     private String lastName;
-    private boolean isActive;
+
+    private Boolean isActive;
+
+    @Column(unique = true)
     private String imageUrl;
 
-    protected Users() {
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "role_id")
+    private Roles role;
 
-    }
-
-    @ManyToOne(cascade = jakarta.persistence.CascadeType.ALL)
-    @JoinColumn(name = "role_id", referencedColumnName = "id", nullable=false)
-    public Roles getRole() {
-        return role;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public boolean isActive() {
-        return isActive;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setRole(Roles role) {
-        this.role = role;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public void setActive(boolean active) {
-        isActive = active;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
+    @OneToMany(mappedBy = "seller", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private List<Offers> offerList;
 }

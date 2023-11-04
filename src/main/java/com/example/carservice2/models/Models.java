@@ -1,19 +1,38 @@
 package com.example.carservice2.models;
 
 import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import java.util.List;
 
+import lombok.Data;
+
+@EqualsAndHashCode(callSuper = true)
+@Data
 @Entity
-public class Models extends ExtendsEntity{
-    private Brands brand;
-    private List<Offers> offers;
+@NoArgsConstructor
+public class Models extends ExtendsEntity {
+
+    @Column(nullable = false)
     private String name;
+
     private String imageUrl;
-    private int startYear;
-    private int endYear;
+
+    private Integer startYear;
+
+    private Integer endYear;
+
+    @ManyToOne(cascade = {CascadeType.MERGE})
+    @JoinColumn(name = "brand_id", nullable = false)
+    private Brands brand;
+
+    @OneToMany(mappedBy = "model", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private List<Offers> offerList;
+
     @Enumerated(EnumType.STRING)
     private CategoryType category;
     public enum CategoryType {
@@ -33,69 +52,5 @@ public class Models extends ExtendsEntity{
         public void setNum(int num) {
             this.num = num;
         }
-    }
-
-    protected Models() {
-
-    }
-
-    @ManyToOne(cascade = CascadeType.REMOVE) // по умолчанию используется LAZY загрузка(Связанные сущности не будут подгружатся сразу)
-    @JoinColumn(name = "brand_id", referencedColumnName = "id", nullable=false)
-    @OnDelete(action = OnDeleteAction.CASCADE) // При удалении родительской сущности связанные дочерние сущности будут удалены на уровне базы данных postgresql
-    public Brands getBrand() {
-        return brand;
-    }
-
-    @OneToMany(mappedBy = "model", cascade = CascadeType.REMOVE)
-    public List<Offers> getOffers() {
-        return offers;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public int getStartYear() {
-        return startYear;
-    }
-
-    public int getEndYear() {
-        return endYear;
-    }
-
-    public CategoryType getCategory() {
-        return category;
-    }
-
-    public void setBrand(Brands brand) {
-        this.brand = brand;
-    }
-
-    public void setOffers(List<Offers> offers) {
-        this.offers = offers;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
-    public void setStartYear(int startYear) {
-        this.startYear = startYear;
-    }
-
-    public void setEndYear(int endYear) {
-        this.endYear = endYear;
-    }
-
-    public void setCategory(CategoryType category) {
-        this.category = category;
     }
 }

@@ -1,9 +1,18 @@
 package com.example.carservice2.models;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
+import java.util.List;
+
+@EqualsAndHashCode(callSuper = true)
+@Data
 @Entity
-public class Roles extends BaseEntity{
+public class Roles extends BaseEntity {
+
     @Enumerated(EnumType.STRING)
     private RoleType role;
     public enum RoleType {
@@ -23,14 +32,7 @@ public class Roles extends BaseEntity{
         }
     }
 
-    protected Roles() {
-
-    }
-    public RoleType getRole() {
-        return role;
-    }
-
-    public void setRole(RoleType role) {
-        this.role = role;
-    }
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "role", fetch = FetchType.LAZY)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private List<Users> users;
 }

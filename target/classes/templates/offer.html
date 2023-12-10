@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{components/head}"/>
+<body>
+	<div class="wrapper">
+		<header th:replace="~{components/header :: headerContent(
+			firstName=${headerUser.getFirstName()},
+			lastName=${headerUser.getLastName()},
+			imageUrl=${headerUser.getImageUrl()})}"
+		/>
+		<main class="offer custom-wrapper">
+			<div class="offer__head">
+				<div class="offer__name">
+					<span th:text="${brand.name}" class="offer__brand"></span>
+					<span> </span>
+					<span th:text="${model.name}" class="offer__model"></span>
+				</div>
+				<div>
+					<span th:text="${offer.price}" class="offer__price"></span>
+					Р
+				</div>
+			</div>
+			<a class="offer__seller-block" th:href="@{/offers/user/{userId}(userId=${user.id})}">
+				<img class="offer__seller-img" th:src="${user.imageUrl}" alt="" />
+				<span th:text="${user.firstName + ' ' + user.lastName}" class="offer__seller-data"></span>
+			</a>
+			<div class="offer__data-flex">
+				<div class="offer__specifications">
+					<p class="offer__specifications-title">Характреристики</p>
+					<p>
+						<span>Тип двигателя: </span>
+						<span th:text="${offer.engine}" class="offer__specifications-engine"></span>
+					</p>
+					<p>
+						<span>КПП: </span>
+						<span th:text="${offer.transmission}" class="offer__specifications-transmission"></span>
+					</p>
+					<p>
+						<span>Пробег: </span>
+						<span th:text="${offer.mileage}" class="offer__specifications-mileage"></span>
+						км
+					</p>
+					<p>
+						<span>Год выпуска: </span>
+						<span th:text="${offer.year}" class="offer__specifications-year"></span>
+					</p>
+					<p>
+						<span>Описание: </span>
+						<span th:text="${offer.description}" class="offer__specifications-description"></span>
+					</p>
+				</div>
+				<div class="offer__img">
+					<img th:src="${offer.imageUrl}" alt="">
+				</div>
+			</div>
+		</main>
+	</div>
+	<script th:src="@{js/app.js}"></script>
+</body>
+
+</html>

@@ -1,17 +1,14 @@
 package com.example.carservice2.services.impl;
 
-import com.example.carservice2.models.Models;
-import com.example.carservice2.models.Users;
-import com.example.carservice2.repositories.ModelsRepository;
-import com.example.carservice2.repositories.UsersRepository;
+import com.example.carservice2.mapper.impl.OfferMapper;
 import com.example.carservice2.services.dto.OffersDTO;
 import com.example.carservice2.models.Offers;
 import com.example.carservice2.repositories.OffersRepository;
 import com.example.carservice2.services.OffersService;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -21,34 +18,20 @@ public class OffersServiceImpl implements OffersService {
 
     private final OffersRepository offersRepository;
 
-    private final ModelsRepository modelsRepository;
-
-    private final UsersRepository usersRepository;
-
-    private final ModelMapper modelMapper;
+    private final OfferMapper offerMapper;
 
     @Autowired
-    public OffersServiceImpl(OffersRepository offersRepository, ModelsRepository modelsRepository, UsersRepository usersRepository, ModelMapper modelMapper) {
+    public OffersServiceImpl(OffersRepository offersRepository, OfferMapper offerMapper) {
         this.offersRepository = offersRepository;
-        this.modelsRepository = modelsRepository;
-        this.usersRepository = usersRepository;
-        this.modelMapper = modelMapper;
+        this.offerMapper = offerMapper;
     }
 
     @Override
     public OffersDTO createOffer(OffersDTO offerDto) {
-        Offers offer = modelMapper.map(offerDto, Offers.class);
-//        if(offerDto.getModelsDTO().getId() != null) {
-//            Models model = modelsRepository.findById(offerDto.getModelsDTO().getId()).get();
-//            offer.setModel(model);
-//        }
-        if(offerDto.getUsersDTO().getId() != null) {
-            Users user = usersRepository.findById(offerDto.getUsersDTO().getId()).get();
-            offer.setSeller(user);
-        }
-
+        Offers offer = offerMapper.toModel(offerDto);
+        offer.setCreated(LocalDate.now());
         Offers createdOffer = offersRepository.saveAndFlush(offer);
-        return modelMapper.map(createdOffer, OffersDTO.class);
+        return offerMapper.toDTO(createdOffer);
     }
 
     @Override
@@ -62,9 +45,10 @@ public class OffersServiceImpl implements OffersService {
         offer.setPrice(offerDto.getPrice());
         offer.setTransmission(Offers.TransmissionType.valueOf(String.valueOf(offerDto.getTransmission())));
         offer.setYear(offerDto.getYear());
+        offer.setModified(LocalDate.now());
 
-        Offers updatedOffer = offersRepository.save(offer);
-        return modelMapper.map(updatedOffer, OffersDTO.class);
+        Offers updatedOffer = offersRepository.saveAndFlush(offer);
+        return offerMapper.toDTO(updatedOffer);
     }
 
     @Override
@@ -75,14 +59,31 @@ public class OffersServiceImpl implements OffersService {
     @Override
     public OffersDTO getOfferById(UUID id) {
         Offers offer = offersRepository.findById(id).orElseThrow(() -> new RuntimeException("Offer not found"));
-        return modelMapper.map(offer, OffersDTO.class);
+        return offerMapper.toDTO(offer);
     }
 
     @Override
     public List<OffersDTO> getAllOffers() {
         List<Offers> offers = offersRepository.findAll();
         return offers.stream()
-                .map(offer -> modelMapper.map(offer, OffersDTO.class))
+                .map(offer -> offerMapper.toDTO(offer))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public List<OffersDTO> getOffersByModelId(UUID modelId) {
+        List<Offers> offers = offersRepository.getOffersByModelId(modelId);
+        return offers.stream()
+                .map(offer -> offerMapper.toDTO(offer))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<OffersDTO> getOffersByUserId(UUID userId) {
+        List<Offers> offers = offersRepository.getOffersBySellerId(userId);
+        return offers.stream()
+                .map(offer -> offerMapper.toDTO(offer))
+                .collect(Collectors.toList());
+    }
+
 }

@@ -30,11 +30,11 @@ public class Users extends ExtendsEntity {
     @Column(unique = true)
     private String imageUrl;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "role_id")
     private Roles role;
 
-    @OneToMany(mappedBy = "seller", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "seller", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private List<Offers> offerList;
+    private List<Offers> offers;
 }

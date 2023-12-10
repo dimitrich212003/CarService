@@ -6,19 +6,10 @@ import jakarta.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 
 import java.util.UUID;
-public class BrandsDTO {
-    private UUID id;
+public class BrandsDTO extends BaseEntityDto{
     private String name;
 
     public BrandsDTO() {
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
     }
 
     @NotNull

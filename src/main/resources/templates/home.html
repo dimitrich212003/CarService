@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{components/head}"/>
+<body>
+	<div class="wrapper">
+		<header th:replace="~{components/header :: headerContent(
+			firstName=${headerUser.getFirstName()},
+			lastName=${headerUser.getLastName()},
+			imageUrl=${headerUser.getImageUrl()})}"
+		/>
+		<main class="home">
+			<h1 class="home__title">CarFor$ale</h1>
+			<h2 class="home__subtitle">
+				Лучший сервис по продаже поддержанных автомобилей
+			</h2>
+			<form class="home__select-form">
+				<select class="home__select-brand" id="brand">
+					<option value="">Бренд</option>
+					<option th:each="brand: ${brands}"
+							th:value="${brand.id}"
+							th:text="${brand.name}"
+					></option>
+				</select>
+				<select class="home__select-model" id="model">
+					<option value="">Модель</option>
+					<option th:each="model: ${models}"
+							th:value="${model.id}"
+							th:text="${model.name}"
+					></option>
+				</select>
+				<a id="searchLink" class="home__search-btn" type="button"></a>
+			</form>
+		</main>
+	</div>
+	<script th:src="@{js/app.js}"></script>
+</body>
+</html>

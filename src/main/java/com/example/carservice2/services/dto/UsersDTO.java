@@ -2,75 +2,56 @@ package com.example.carservice2.services.dto;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import org.hibernate.validator.constraints.Length;
 
 import java.util.UUID;
 
-public class UsersDTO {
-    private UUID id;
-    private String role;
+public class UsersDTO extends BaseEntityDto{
+    private UUID role;
     private String username;
     private String password;
     private String firstName;
     private String lastName;
-    private boolean isActive;
+    private Boolean isActive;
     private String imageUrl;
 
     public UsersDTO() {
 
     }
 
-    public UUID getId() {
-        return id;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    @NotNull
-    @NotEmpty
-    @Length(min = 4, message = "Username must be minimum 4 characters!")
+    @NotEmpty(message = "Имя пользователя не может быть пустым!")
+    @Size(min = 4, message = "Имя пользователя должно быть минимум 4 символа!")
     public String getUsername() {
         return username;
     }
 
-    @NotNull
-    @NotEmpty
-    @Length(min = 5, message = "Password must be minimum 5 characters!")
+    @NotEmpty(message = "Пароль не может быть пустым!")
+    @Size(min = 5, message = "Пароль должен быть минимум 5 символов!")
     public String getPassword() {
         return password;
     }
 
-
-    @NotNull
-    @NotEmpty
-    @Length(min = 2, message = "First name must be minimum 2 characters!")
+    @NotEmpty(message = "Имя не может быть пустым!")
+    @Size(min = 2, message = "Имя должно быть минимум 2 символа!")
     public String getFirstName() {
         return firstName;
     }
 
-    @NotNull
-    @NotEmpty
-    @Length(min = 2, message = "Last name must be minimum 2 characters!")
+    @NotEmpty(message = "Фамилия не может быть пустой!")
+    @Size(min = 2, message = "Фамилия должна быть минимум 2 символа!")
     public String getLastName() {
         return lastName;
     }
 
-    public boolean isActive() {
+    public Boolean getIsActive() {
         return isActive;
     }
 
+    @NotEmpty(message = "Ссылка на изображение не может быть пустой!")
+    @Size(min = 10, message = "Ссылка на изображение должна быть минимум 10 символов!")
     public String getImageUrl() {
         return imageUrl;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
     }
 
     public void setUsername(String username) {
@@ -89,11 +70,19 @@ public class UsersDTO {
         this.lastName = lastName;
     }
 
-    public void setActive(boolean active) {
+    public void setIsActive(Boolean active) {
         isActive = active;
     }
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public UUID getRole() {
+        return role;
+    }
+
+    public void setRole(UUID role) {
+        this.role = role;
     }
 }

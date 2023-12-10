@@ -1,14 +1,11 @@
 package com.example.carservice2.models;
 
 import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import java.util.List;
-
-import lombok.Data;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -25,13 +22,13 @@ public class Models extends ExtendsEntity {
 
     private Integer endYear;
 
-    @ManyToOne(cascade = {CascadeType.MERGE})
+    @ManyToOne
     @JoinColumn(name = "brand_id", nullable = false)
     private Brands brand;
 
-    @OneToMany(mappedBy = "model", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "model", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private List<Offers> offerList;
+    private List<Offers> offers;
 
     @Enumerated(EnumType.STRING)
     private CategoryType category;
@@ -52,5 +49,10 @@ public class Models extends ExtendsEntity {
         public void setNum(int num) {
             this.num = num;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Model [id=" + id + ", name=" + name + ", brand=" + brand + "]";
     }
 }

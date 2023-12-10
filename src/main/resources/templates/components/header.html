@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="headerContent(firstName, lastName, imageUrl)">
+    <header class="header">
+        <div class="header__container">
+            <div class="header__flex">
+                <div class="header__logo">
+                    <a href="/">
+                        <span>CarFor$ale</span>
+                    </a>
+                </div>
+                <nav class="header_navigation">
+                    <a href="/brands">Все бренды</a>
+                    <a href="/offers">Мои предложения</a>
+                    <a href="/offer/add">Добавить предложение</a>
+                </nav>
+<!--                <div class="header__auntif-registr">-->
+<!--                    <a href="/authorization" class="header__auntif-registr">Вход/Регистрация</a>-->
+<!--                </div>-->
+                <div class="header__auntif-registr">
+                    <a href="/profile">
+                        <span th:text="${firstName + ' ' + lastName}" class="header__person-data"></span>
+                        <img class="header__person-img" th:src="${imageUrl}" alt="" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+</th:block>
+</html>

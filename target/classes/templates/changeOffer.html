@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{components/head}"/>
+<body>
+<div class="wrapper">
+	<header th:replace="~{components/header :: headerContent(
+			firstName=${headerUser.getFirstName()},
+			lastName=${headerUser.getLastName()},
+			imageUrl=${headerUser.getImageUrl()})}"
+	/>
+	<main class="addOffer custom-wrapper">
+		<p class="addOffer__title">Измените ваше предложение:</p>
+		<form th:action="@{/offer/update/{offerId}(offerId = ${offer.id})}" th:method="post" th:object="${offer}" class="addOffer__form">
+			<select style="opacity: 0;" th:field="*{model}" class="addOffer__select" id="addOffer-model">
+				<option value="">Выберите модель</option>
+				<option
+						th:value="${offer.model}"
+						th:selected="${offer.model}"
+				></option>
+			</select>
+			<div class="addOffer__specification-select-row">
+				<div style="display: flex; flex-direction: column; gap: 5px;">
+					<select th:field="*{engine}" class="addOffer__select" name="addOffer-engine" id="addOffer-engine">
+						<option value="">Тип двигателя</option>
+						<option th:value="GASOLINE" th:selected="${offer.engine == 'GASOLINE'}">Бензин</option>
+						<option th:value="DIESEL" th:selected="${offer.engine == 'DIESEL'}">Дизель</option>
+						<option th:value="ELECTRIC" th:selected="${offer.engine == 'ELECTRIC'}">Электро</option>
+						<option th:value="HYBRID" th:selected="${offer.engine == 'HYBRID'}">Гибрид</option>
+					</select>
+					<small th:if="${#fields.hasErrors('engine')}" th:errors="*{engine}"
+						   style="color: red;">Error message</small>
+				</div>
+				<div style="display: flex; flex-direction: column; gap: 5px;">
+					<select th:field="*{transmission}" class="addOffer__select" name="addOffer-transmission" id="addOffer-transmission">
+						<option value="">КПП</option>
+						<option th:selected="${offer.transmission == 'MANUAL'}" th:value="MANUAL">Механическая</option>
+						<option th:selected="${offer.transmission == 'AUTOMATIC'}" th:value="AUTOMATIC">Автоматическая</option>
+					</select>
+					<small th:if="${#fields.hasErrors('transmission')}" th:errors="*{transmission}"
+						   style="color: red;">Error message</small>
+				</div>
+				<div class="addOffer__input-column">
+					<p style="display: flex; flex-direction: column; gap: 5px;">
+					<div>
+						<input th:field="*{year}" th:value="${offer.year}" class="input" type="text" placeholder="Год выпуска" />
+					</div>
+					<small th:if="${#fields.hasErrors('year')}" th:errors="*{year}"
+						   style="color: red;">Error message</small>
+					</p>
+					<p style="display: flex; flex-direction: column; gap: 5px;">
+					<div>
+						<input th:field="*{price}" th:value="${offer.price}" class="input" type="text" placeholder="Стоимость" />
+					</div>
+					<small th:if="${#fields.hasErrors('price')}" th:errors="*{price}"
+						   style="color: red;">Error message</small>
+					</p>
+				</div>
+			</div>
+			<div class="addOffer__bottom-row">
+				<div class="addOffer__input-column">
+					<p style="display: flex; flex-direction: column; gap: 5px;">
+					<div>
+						<input th:field="*{mileage}" th:value="${offer.mileage}" class="input" type="text" placeholder="Пробег (км)" />
+					</div>
+					<small th:if="${#fields.hasErrors('mileage')}" th:errors="*{mileage}"
+						   style="color: red;">Error message</small>
+					</p>
+					<p style="display: flex; flex-direction: column; gap: 5px;">
+					<div>
+						<input th:field="*{imageUrl}" th:value="${offer.imageUrl}" class="input" type="text" placeholder="Ссылка на изображение" />
+					</div>
+					<small th:if="${#fields.hasErrors('imageUrl')}" th:errors="*{imageUrl}"
+						   style="color: red;">Error message</small>
+					</p>
+				</div>
+				<div style="display: flex; flex-direction: column; gap: 5px; align-self: flex-end;">
+					<textarea th:field="*{description}" th:text="${offer.description}" class="addOffer__description" id="description" name="description" rows="4" cols="50" placeholder="Описание"></textarea>
+					<small th:if="${#fields.hasErrors('description')}" th:errors="*{description}"
+						   style="color: red;">Error message</small>
+				</div>
+				<button type="submit" class="addOffer__submit-btn btn">Сохранить</button>
+			</div>
+		</form>
+	</main>
+</div>
+<script th:src="@{/js/app.js}"></script>
+</body>
+</html>

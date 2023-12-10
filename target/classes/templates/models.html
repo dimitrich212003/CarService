@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{components/head}"/>
+<body>
+	<div class="wrapper">
+		<header th:replace="~{components/header :: headerContent(
+			firstName=${headerUser.getFirstName()},
+			lastName=${headerUser.getLastName()},
+			imageUrl=${headerUser.getImageUrl()})}"
+		/>
+		<main class="model custom-wrapper">
+			<div class="model__head">
+				<div th:text="${brand.name}" class="model__brand-name"></div>
+				<select class="model__filter" id="category">
+					<option value="">Категория</option>
+					<option value="car">Автомобиль</option>
+					<option value="buss">Автобус</option>
+					<option value="truck">Грузовик</option>
+					<option value="motorcycle">Мотоцикл</option>
+				</select>
+			</div>
+			<div class="model__column">
+				<a th:each="model: ${models}" th:href="@{/offers/{modelId}(modelId=${model.id})}" class="model__card">
+					<div class="model__img">
+						<img th:src="${model.imageUrl}" alt="">
+					</div>
+					<div class="model__data">
+						<p th:text="${brand.name} + ' ' + ${model.name}" class="model__name"></p>
+						<p class="model__release-years">
+							<span th:text="${model.startYear}" class="model__start-year"></span>
+							-
+							<span th:text="${model.endYear}" class="model__end-year"></span>
+						</p>
+<!--						<span class="model__offers-quantity offers-quantity">-->
+<!--							<span>Количество предложений: </span>-->
+<!--							<span th:text="">14</span>-->
+<!--						</span>-->
+					</div>
+				</a>
+			</div>
+		</main>
+	</div>
+	<script th:src="@{js/app.js}"></script>
+</body>
+</html>

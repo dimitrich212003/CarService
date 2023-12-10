@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{components/head}"/>
+<body>
+	<div class="wrapper">
+		<header th:replace="~{components/header :: headerContent(
+			firstName=${headerUser.getFirstName()},
+			lastName=${headerUser.getLastName()},
+			imageUrl=${headerUser.getImageUrl()})}"
+		/>
+		<main class="auntReg auntReg__container">
+			<h1 class="auntReg__title">
+				<span class="auntReg__select bold" id="auntif">Вход</span>
+				<span>/</span>
+				<span class="auntReg__select" id="regist">Регистрация</span>
+			</h1>
+			<form class="auntReg__form aunt select">
+				<div>
+					<input class="auntReg__input input" type="text" placeholder="Имя пользователя" required />
+				</div>
+				<div>
+					<input class="auntReg__input input" type="password" placeholder="Пароль" required />
+				</div>
+				<button class="auntReg__button btn" type="submit">Войти</button>
+			</form>
+			<form th:action="@{/authorization}" th:method="post" th:object="${user}" class="auntReg__form reg">
+				<div>
+					<input th:field="*{lastName}" class="auntReg__input input" type="text" placeholder="Фамилия" />
+				</div>
+				<small th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
+					   style="color: red;">Error message</small>
+				<div>
+					<input th:field="*{firstName}" class="auntReg__input input" type="text" placeholder="Имя" />
+				</div>
+				<small th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"
+					   style="color: red;">Error message</small>
+				<div>
+					<input th:field="*{username}" class="auntReg__input input" type="text" placeholder="Имя пользователя" />
+				</div>
+				<small th:if="${#fields.hasErrors('username')}" th:errors="*{username}"
+					   style="color: red;">Error message</small>
+				<div>
+					<input th:field="*{password}" class="auntReg__input input" type="password" placeholder="Пароль" />
+				</div>
+				<small th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+					   style="color: red;">Error message</small>
+				<div>
+					<input th:field="*{imageUrl}" class="auntReg__input input" type="text" placeholder="Ссылка на изображение" />
+				</div>
+				<small th:if="${#fields.hasErrors('imageUrl')}" th:errors="*{imageUrl}"
+					   style="color: red;">Error message</small>
+				<button class="auntReg__button btn" type="submit">
+					Зарегистрироваться
+				</button>
+			</form>
+		</main>
+	</div>
+	<script th:src="@{js/app.js}"></script>
+</body>
+</html>

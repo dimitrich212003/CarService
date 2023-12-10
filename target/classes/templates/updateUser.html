@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{components/head}"/>
+<body>
+<div class="wrapper">
+  <header th:replace="~{components/header :: headerContent(
+			firstName=${headerUser.getFirstName()},
+			lastName=${headerUser.getLastName()},
+			imageUrl=${headerUser.getImageUrl()})}"
+  />
+  <main class="user__container">
+    <form th:action="@{/profile/update}" th:method="post" th:object="${headerUser}" class="user__changed">
+      <div style="display: flex;" class="user__flex-column">
+        <div class="user__input-wrapper">
+          <p>Ссылка на изображение:</p>
+          <div>
+            <input th:field="*{imageUrl}" class="user__input input" placeholder="URL" type="text" />
+          </div>
+          <small th:if="${#fields.hasErrors('imageUrl')}" th:errors="*{imageUrl}"
+                 style="color: red;">Error message</small>
+        </div>
+        <div class="user__input-wrapper">
+          <p>Фамилия:</p>
+          <div>
+            <input th:field="*{lastName}" value="Глущенко" id="lastNameChange" class="user__input input" type="text" />
+          </div>
+          <small th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
+                 style="color: red;">Error message</small>
+        </div>
+        <div class="user__input-wrapper">
+          <p>Имя:</p>
+          <div>
+            <input th:field="*{firstName}" value="Дмитрий" id="firstNameChange" class="user__input input" type="text" />
+          </div>
+          <small th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"
+                 style="color: red;">Error message</small>
+        </div>
+        <div class="user__input-wrapper">
+          <p>Никнейм:</p>
+          <div>
+            <input th:field="*{username}" value="dimi_trich" id="usernameChange" class="user__input input" type="text" />
+          </div>
+          <small th:if="${#fields.hasErrors('username')}" th:errors="*{username}"
+                 style="color: red;">Error message</small>
+        </div>
+        <div class="user__input-wrapper">
+          <p>Пароль:</p>
+          <div>
+            <input th:field="*{password}" value="Ytrewq11!" id="passwordChange" class="user__input input" type="text" />
+          </div>
+          <small th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+                 style="color: red;">Error message</small>
+        </div>
+        <button type="submit" class="user__save-btn btn">
+          Сохранить
+        </button>
+      </div>
+    </form>
+  </main>
+</div>
+<script th:src="@{js/app.js}"></script>
+</body>
+</html>

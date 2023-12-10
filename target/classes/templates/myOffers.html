@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{components/head}"/>
+<body>
+	<div class="wrapper">
+		<header th:replace="~{components/header :: headerContent(
+			firstName=${headerUser.getFirstName()},
+			lastName=${headerUser.getLastName()},
+			imageUrl=${headerUser.getImageUrl()})}"
+		/>
+		<main class="model custom-wrapper">
+			<div class="userOffers__head">
+				<p class="myOffers__title">Мои предложения</p>
+				<!--				<span class="userOffers__offers-quantity offers-quantity">-->
+				<!--					<span>Количество предложений: </span>-->
+				<!--					<span>14</span>-->
+				<!--				</span>-->
+			</div>
+			<div class="model__column">
+				<div th:each="offer, offerIndex: ${offers}" class="myOffers__card-wrapper">
+					<a th:href="@{/offer/{offerId}(offerId = ${offer.id})}" class="model__card">
+						<div class="model__img">
+							<img th:src="${offer.imageUrl}" alt="" />
+						</div>
+						<div class="model__data">
+							<div class="offers__head">
+								<div class="offers__name">
+									<span th:each="brand, brandIndex: ${brands}" th:if="${offerIndex.index == brandIndex.index}" th:text="${brand.name}" class="model__brand"></span>
+									<span> </span>
+									<span th:each="model, modelIndex: ${models}" th:if="${offerIndex.index == modelIndex.index}" th:text="${model.name}" class="model__model"></span>
+								</div>
+								<div>
+									<span th:text="${offer.price}" class="offers__price"></span>
+									Р
+								</div>
+							</div>
+							<div class="offers__specifications">
+								<div class="offers__specifications-column">
+									<p>
+										<span>Тип двигателя: </span>
+										<span th:text="${offer.engine}" class="offers__specifications-engine"></span>
+									</p>
+									<p>
+										<span>КПП: </span>
+										<span th:text="${offer.transmission}" class="offers__specifications-transmission">Автоматическая</span>
+									</p>
+								</div>
+								<div class="offers__specifications-column">
+									<p>
+										<span>Пробег: </span>
+										<span th:text="${offer.mileage}" class="offers__specifications-mileage">20000</span>
+										км
+									</p>
+									<p>
+										<span>Год выпуска: </span>
+										<span th:text="${offer.year}" class="offers__specifications-year">2021</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</a>
+<!--					<div class="myOffers__btn-row">-->
+<!--						<button onclick="window.location.href = '/offer/update'" class="myOffers__btn btn">-->
+<!--							Изменить-->
+<!--						</button>-->
+<!--						<button class="myOffers__btn btn">Удалить</button>-->
+<!--						<a th:href="@{/offer/delete/{offerId}(offerId=${offer.id})}" class="myOffers__btn btn">Удалить</a>-->
+<!--					</div>-->
+				</div>
+				<div class="myOffers__add-offer">
+					<a class="btn" href="/offer/add">Добавить предложение</a>
+				</div>
+			</div>
+		</main>
+	</div>
+<script th:src="@{js/app.js}"></script>
+</body>
+<!--<a th:href="@{/offer/delete/{offerId}(offerId=${offer.id})}" class="myOffers__btn btn">Удалить</a>-->
+
+</html>

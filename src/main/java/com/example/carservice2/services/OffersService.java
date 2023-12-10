@@ -16,4 +16,8 @@ public interface OffersService {
     OffersDTO getOfferById(UUID id);
 
     List<OffersDTO> getAllOffers();
+
+    List<OffersDTO> getOffersByModelId(UUID modelId);
+
+    List<OffersDTO> getOffersByUserId(UUID userId);
 }

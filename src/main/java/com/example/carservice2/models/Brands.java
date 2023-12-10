@@ -10,17 +10,20 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
-@Builder
-@AllArgsConstructor
 @NoArgsConstructor
 public class Brands extends ExtendsEntity {
 
     @Column(nullable = false, unique = true)
     private String name;
 
-    @OneToMany(mappedBy = "brand", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "brand", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private List<Models> models;
+
+    @Override
+    public String toString() {
+        return "Brand [id=" + id + ", name=" + name + "]";
+    }
 
 }
 

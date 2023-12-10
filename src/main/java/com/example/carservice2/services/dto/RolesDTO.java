@@ -7,24 +7,15 @@ import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
-public class RolesDTO {
-    private UUID id;
+public class RolesDTO extends BaseEntityDto{
     private Roles.RoleType role;
 
     public RolesDTO() {
 
     }
 
-    public UUID getId() {
-        return id;
-    }
-
     public Roles.RoleType getRole() {
         return role;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
     }
 
     public void setRole(Roles.RoleType role) {

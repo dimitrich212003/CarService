@@ -54,7 +54,6 @@ public class Offers extends ExtendsEntity {
         }
     }
 
-    @Column(unique = true)
     private String imageUrl;
 
     private String description;
@@ -65,11 +64,11 @@ public class Offers extends ExtendsEntity {
 
     private Integer year;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
+    @ManyToOne
     @JoinColumn(name = "model_id")
     private Models model;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
+    @ManyToOne
     @JoinColumn(name = "seller_id")
     private Users seller;
 }

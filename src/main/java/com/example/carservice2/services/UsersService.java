@@ -15,4 +15,9 @@ public interface UsersService {
     UsersDTO getUserById(UUID id);
 
     List<UsersDTO> getAllUsers();
+
+    UsersDTO findByOfferId(UUID offerId);
+
+    UsersDTO getUsersByUsername(String username);
+
 }

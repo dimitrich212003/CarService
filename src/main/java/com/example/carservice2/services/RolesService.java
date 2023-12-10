@@ -1,5 +1,6 @@
 package com.example.carservice2.services;
 
+import com.example.carservice2.models.Roles;
 import com.example.carservice2.services.dto.RolesDTO;
 
 import java.util.List;
@@ -15,4 +16,6 @@ public interface RolesService {
     RolesDTO getRoleById(UUID id);
 
     List<RolesDTO> getAllRoles();
+
+    RolesDTO findByRoleType(Roles.RoleType roleType);
 }

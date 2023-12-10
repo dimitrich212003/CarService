@@ -5,49 +5,158 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67d7081f-f814-4dd8-955a-476510bb656d" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/mapper/Mapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/mapper/impl/CarModelMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/mapper/impl/OfferMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/dto/BaseEntityDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/controllers/BrandsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/controllers/ModelsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/controllers/OffersController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/controllers/UsersController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/mapper/impl/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/web/BrandsWebController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/web/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/web/ModelsWebController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/web/OffersWebController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/web/UsersWebController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/audi.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/audi.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/backArrow.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/backArrow.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/bmw.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/bmw.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/gelly.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/gelly.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/haval.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/haval.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/logo.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/mercedes.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/mercedes.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/search.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/search.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/addOffer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/auntifReg.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/brands.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/changeOffer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/components/head.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/components/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/modelOffers.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/models.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/myOffer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/myOffers.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/offer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/updateUser.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/userOffers.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/java/ru/rutmiit/CompanyApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/java/ru/rutmiit/config/BeanConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/java/ru/rutmiit/dto/AddCompanyDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/java/ru/rutmiit/dto/AddEmployeeDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/java/ru/rutmiit/dto/ShowCompanyInfoDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/java/ru/rutmiit/dto/ShowDetailedCompanyInfoDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/java/ru/rutmiit/dto/ShowDetailedEmployeeInfoDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/java/ru/rutmiit/dto/ShowEmployeeInfoDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/java/ru/rutmiit/models/entities/BaseEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/java/ru/rutmiit/models/entities/Company.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/java/ru/rutmiit/models/entities/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/java/ru/rutmiit/models/enums/EducationLevel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/java/ru/rutmiit/repositories/CompanyRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/java/ru/rutmiit/repositories/EmployeeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/java/ru/rutmiit/services/CompanyService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/java/ru/rutmiit/services/EmployeeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/java/ru/rutmiit/utils/validation/UniqueCompanyName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/java/ru/rutmiit/utils/validation/UniqueCompanyNameValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/java/ru/rutmiit/web/CompanyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/java/ru/rutmiit/web/EmployeeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/java/ru/rutmiit/web/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/resources/static/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/resources/static/pic/company.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/resources/static/pic/employee.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/resources/templates/company-add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/resources/templates/company-all.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/resources/templates/company-details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/resources/templates/employee-add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/resources/templates/employee-all.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/resources/templates/employee-details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/resources/templates/fragments/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/resources/templates/fragments/head.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/resources/templates/fragments/navbar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../zamanViev/src/test/java/ru/rut-miit/LinkedOutApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/b2dbfd0f-3c11-4a1b-86ed-b17a2d3b0ecb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b2dbfd0f-3c11-4a1b-86ed-b17a2d3b0ecb.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/b2dbfd0f-3c11-4a1b-86ed-b17a2d3b0ecb/storage_v2/_src_/database/car.1H8BAA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b2dbfd0f-3c11-4a1b-86ed-b17a2d3b0ecb/storage_v2/_src_/database/car.1H8BAA/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/DataInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/models/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/models/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/mapper/Mapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/mapper/Mapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/mapper/impl/CarModelMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/mapper/impl/CarModelMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/mapper/impl/OfferMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/mapper/impl/OfferMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/models/Brands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/models/Brands.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/models/Models.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/models/Models.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/models/Offers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/models/Offers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/models/Roles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/models/Roles.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/models/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/models/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/repositories/BrandsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/repositories/BrandsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/repositories/ModelsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/repositories/ModelsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/repositories/OffersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/repositories/OffersRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/repositories/RolesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/repositories/RolesRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/repositories/UsersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/repositories/UsersRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/BrandsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/BrandsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/ModelsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/ModelsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/OffersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/OffersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/RolesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/RolesService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/UsersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/dto/BaseEntityDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/dto/BaseEntityDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/dto/BrandsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/dto/BrandsDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/dto/ModelsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/dto/ModelsDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/dto/OffersDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/dto/OffersDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/dto/RolesDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/dto/RolesDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/dto/UsersDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/dto/UsersDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/impl/BrandsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/impl/BrandsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/impl/ModelsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/impl/ModelsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/impl/OffersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/impl/OffersServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/impl/RolesServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/impl/RolesServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/impl/UsersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carservice2/services/impl/UsersServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/DataInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/DataInitializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/BaseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/BaseEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/mapper/impl/CarModelMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/mapper/impl/CarModelMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/mapper/impl/OfferMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/mapper/impl/OfferMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Brands$BrandsBuilder.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Brands.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Brands.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Models$CategoryType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Models$CategoryType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Models.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Models.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Offers$EngineType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Offers$EngineType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Offers$TransmissionType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Offers$TransmissionType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Offers.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Offers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Roles$RoleType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Roles$RoleType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Roles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Roles.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/models/Users.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/repositories/BrandsRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/repositories/BrandsRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/repositories/ModelsRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/repositories/ModelsRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/repositories/OffersRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/repositories/OffersRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/repositories/RolesRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/repositories/RolesRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/repositories/UsersRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/repositories/UsersRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/BrandsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/BrandsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/ModelsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/ModelsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/OffersService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/OffersService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/RolesService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/RolesService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/UsersService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/UsersService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/dto/BrandsDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/dto/BrandsDTO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/dto/ModelsDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/dto/ModelsDTO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/dto/OffersDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/dto/OffersDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/dto/RolesDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/dto/RolesDTO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/dto/UsersDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/dto/UsersDTO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/impl/BrandsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/impl/BrandsServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/impl/ModelsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/impl/ModelsServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/impl/OffersServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/impl/OffersServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/impl/RolesServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/impl/RolesServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/impl/UsersServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/carservice2/services/impl/UsersServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CarService2" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../branches" beforeDir="false" afterPath="$PROJECT_DIR$/../branches" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../modelmapper-demo" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +168,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -69,13 +179,17 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2WfJgbHpk5kSVLaKnJSt5ZywGkv" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
@@ -141,7 +255,18 @@
       <workItem from="1698673829872" duration="17511000" />
       <workItem from="1698747940949" duration="898000" />
       <workItem from="1698856875071" duration="1374000" />
-      <workItem from="1698908582591" duration="40766000" />
+      <workItem from="1698908582591" duration="42504000" />
+      <workItem from="1699172826194" duration="10693000" />
+      <workItem from="1699460712652" duration="38000" />
+      <workItem from="1699467437423" duration="6163000" />
+      <workItem from="1699476197247" duration="1484000" />
+      <workItem from="1699511324876" duration="15976000" />
+      <workItem from="1699616472473" duration="2006000" />
+      <workItem from="1701342615004" duration="60331000" />
+      <workItem from="1701591862565" duration="64762000" />
+      <workItem from="1701871319720" duration="1388000" />
+      <workItem from="1701951797732" duration="2626000" />
+      <workItem from="1702212265046" duration="1413000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1698503801937</created>
@@ -168,6 +293,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="initial commit" />
     <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
   </component>

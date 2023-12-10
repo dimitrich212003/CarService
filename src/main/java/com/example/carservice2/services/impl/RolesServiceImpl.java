@@ -8,6 +8,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.management.relation.Role;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -38,7 +39,7 @@ public class RolesServiceImpl implements RolesService {
 
         role.setRole(Roles.RoleType.valueOf(String.valueOf(roleDTO.getRole())));
 
-        Roles updatedUserRole = rolesRepository.save(role);
+        Roles updatedUserRole = rolesRepository.saveAndFlush(role);
         return modelMapper.map(updatedUserRole, RolesDTO.class);
     }
 
@@ -59,5 +60,11 @@ public class RolesServiceImpl implements RolesService {
         return roles.stream()
                 .map(role -> modelMapper.map(role, RolesDTO.class))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public RolesDTO findByRoleType(Roles.RoleType roleType) {
+        Roles role = rolesRepository.findByRoleType(roleType);
+        return modelMapper.map(role, RolesDTO.class);
     }
 }

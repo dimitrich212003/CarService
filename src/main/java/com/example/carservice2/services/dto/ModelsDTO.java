@@ -7,8 +7,7 @@ import org.hibernate.validator.constraints.Length;
 
 import java.util.UUID;
 
-public class ModelsDTO {
-        private UUID id;
+public class ModelsDTO extends BaseEntityDto{
         private String name;
         private Models.CategoryType category;
         private String imageUrl;
@@ -19,10 +18,6 @@ public class ModelsDTO {
 
     public ModelsDTO() {
 
-    }
-
-    public UUID getId() {
-        return id;
     }
 
     @NotNull
@@ -46,10 +41,6 @@ public class ModelsDTO {
 
     public int getEndYear() {
         return endYear;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
     }
 
     public void setName(String name) {

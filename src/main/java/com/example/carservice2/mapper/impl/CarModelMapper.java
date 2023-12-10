@@ -22,12 +22,11 @@ public class CarModelMapper implements Mapper<Models, ModelsDTO> {
         this.modelMapper = modelMapper;
         this.brandsRepository = brandsRepository;
 
-        TypeMap<Models, ModelsDTO> modelPropertyMapper = modelMapper.createTypeMap(Models.class, ModelsDTO.class);
-        modelPropertyMapper.addMapping(
-                model -> model.getBrand() != null ? model.getBrand().getId() : "brand not underfunded",
-                ModelsDTO::setBrand
-
-        );
+//        TypeMap<Models, ModelsDTO> modelPropertyMapper = modelMapper.createTypeMap(Models.class, ModelsDTO.class);
+//        modelPropertyMapper.addMapping(
+//                model -> model.getBrand() != null ? model.getBrand().getId() : "brand not underfunded",
+//                ModelsDTO::setBrand
+//        );
     }
 
     @Override
@@ -42,8 +41,8 @@ public class CarModelMapper implements Mapper<Models, ModelsDTO> {
 
     @Override
     public ModelsDTO toDTO(Models model) {
+
         ModelsDTO dto = modelMapper.map(model, ModelsDTO.class);
-//        System.out.println(model.getBrand().getId() + "мы в методе toDTO ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫыы");
         if (model.getBrand() != null) {
             dto.setBrand(model.getBrand().getId());
         }
